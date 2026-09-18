@@ -22,11 +22,17 @@ public class Main {
        double[] grades = new double[10];
        
        while(exitLoop != 999){
-        System.out.print("Enter a quiz grade: ");
-        userInput = scanner.nextDouble();
-        exitLoop = userInput;
+            for (int i = 1; i <=10; i++){
+                System.out.print("Enter a quiz grade: ");
+                userInput = scanner.nextDouble();
+                exitLoop = userInput;
+                if(i == 10 || exitLoop == 999){
+                    exitLoop = 999;
+                    System.out.println("All grades entered.");
+                    break;
+                }
+            }
        }
-
        return grades;
     }
 }
